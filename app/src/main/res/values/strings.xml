@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Saarthi</string>
+    <string-array name="note_types">
+        <item>Story</item>
+        <item>Research</item>
+        <item>Project</item>
+    </string-array>
+</resources>
