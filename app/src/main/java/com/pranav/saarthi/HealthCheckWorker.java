@@ -60,6 +60,8 @@ public class HealthCheckWorker extends Worker {
                 json.put("status", "success");
 
                 sendReport(json.toString());
+                // Schedule the next 10 AM / 10 PM checks
+                HealthCheckScheduler.schedule(getApplication());
                 return Result.success();
             } else {
                 Log.e(TAG, "Health check failed with code: " + responseCode);
