@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="24dp"
     android:background="?android:attr/colorBackground"
-    tools:context=".UpdateTitleActivity">
+    tools:context=".ui.UpdateTitleActivity">
 
     <TextView
         android:id="@+id/tvTitle"

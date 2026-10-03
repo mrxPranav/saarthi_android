@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".SaarthiApplication"
@@ -16,7 +18,7 @@
         android:theme="@style/Theme.Saarthi">
 
         <activity
-            android:name=".LandingActivity"
+            android:name=".ui.LandingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,53 +27,81 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false" />
 
         <activity
-            android:name=".SavedNotesActivity"
+            android:name=".ui.SavedNotesActivity"
             android:label="Saved Notes"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
 
         <activity
-            android:name=".BackupActivity"
+            android:name=".ui.BackupActivity"
             android:label="Backup and Restore"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
 
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:label="Settings"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
 
         <activity
-            android:name=".UpdateTitleActivity"
+            android:name=".ui.UpdateTitleActivity"
             android:label="AI Update Titles"
-            android:parentActivityName=".LandingActivity" />
+            android:parentActivityName=".ui.LandingActivity" />
 
         <activity
-            android:name=".AddTaskActivity"
+            android:name=".ui.AddTaskActivity"
             android:label="Add Task"
-            android:parentActivityName=".LandingActivity" />
+            android:parentActivityName=".ui.LandingActivity" />
 
         <activity
-            android:name=".TasksListActivity"
+            android:name=".ui.TasksListActivity"
             android:label="Tasks List"
-            android:parentActivityName=".LandingActivity" />
+            android:parentActivityName=".ui.LandingActivity" />
 
         <activity
-            android:name=".EditTaskActivity"
+            android:name=".ui.EditTaskActivity"
             android:label="Edit Task"
-            android:parentActivityName=".TasksListActivity" />
+            android:parentActivityName=".ui.TasksListActivity" />
 
         <activity
-            android:name=".HealthCheckActivity"
+            android:name=".ui.HealthCheckActivity"
             android:label="Server Health Stats"
-            android:parentActivityName=".LandingActivity" />
+            android:parentActivityName=".ui.LandingActivity" />
 
         <activity
-            android:name=".ViewNoteActivity"
+            android:name=".notifications.NotificationHistoryActivity"
+            android:label="Notification History"
+            android:parentActivityName=".ui.LandingActivity" />
+
+        <activity
+            android:name=".notifications.NotificationTableActivity"
+            android:label="Notification Data Grid"
+            android:parentActivityName=".ui.LandingActivity" />
+
+        <activity
+            android:name=".ui.ViewNoteActivity"
             android:label="View Note"
-            android:parentActivityName=".SavedNotesActivity" />
+            android:parentActivityName=".ui.SavedNotesActivity" />
+
+        <receiver
+            android:name=".health.HealthCheckBootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".notifications.MyNotificationListenerService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
 
     </application>
 
