@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Saarthi</string>
+    <string name="health_check_count_format">Showing %1$d of %2$d checks</string>
+    <string name="notification_permission_denied">Allow notifications to see health check alerts in the background.</string>
     <string-array name="note_types">
         <item>Story</item>
         <item>Research</item>
