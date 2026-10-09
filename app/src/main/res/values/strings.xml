@@ -2,6 +2,13 @@
     <string name="app_name">Saarthi</string>
     <string name="health_check_count_format">Showing %1$d of %2$d checks</string>
     <string name="notification_permission_denied">Allow notifications to see health check alerts in the background.</string>
+    <string name="app_list_title">Installed Apps</string>
+    <string name="app_list_count">%1$d apps</string>
+    <string name="refresh">Refresh</string>
+    <string name="usage_access_title">Usage access needed</string>
+    <string name="usage_access_message">Allow usage access for Saarthi to show which apps were recently in the foreground (green dot).</string>
+    <string name="open_settings">Open settings</string>
+    <string name="nav_app_list">Installed Apps</string>
     <string-array name="note_types">
         <item>Story</item>
         <item>Research</item>

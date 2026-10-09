@@ -61,6 +61,8 @@ public class LandingActivity extends AppCompatActivity {
                 startActivity(new Intent(LandingActivity.this, NotificationHistoryActivity.class));
             } else if (id == R.id.nav_notification_table) {
                 startActivity(new Intent(LandingActivity.this, NotificationTableActivity.class));
+            } else if (id == R.id.nav_app_list) {
+                startActivity(new Intent(LandingActivity.this, AppListActivity.class));
             }
             drawerLayout.closeDrawer(GravityCompat.END);
             return true;

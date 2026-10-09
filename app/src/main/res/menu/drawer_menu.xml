@@ -29,5 +29,9 @@
             android:id="@+id/nav_notification_table"
             android:icon="@android:drawable/ic_menu_agenda"
             android:title="Notification Data Grid" />
+        <item
+            android:id="@+id/nav_app_list"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="@string/nav_app_list" />
     </group>
 </menu>

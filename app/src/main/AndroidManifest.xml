@@ -5,6 +5,23 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- Broad package visibility for installed-app list (Play policy applies if published). -->
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+    </queries>
 
     <application
         android:name=".SaarthiApplication"
@@ -84,6 +101,11 @@
             android:name=".ui.ViewNoteActivity"
             android:label="View Note"
             android:parentActivityName=".ui.SavedNotesActivity" />
+
+        <activity
+            android:name=".ui.AppListActivity"
+            android:label="@string/app_list_title"
+            android:parentActivityName=".ui.LandingActivity" />
 
         <receiver
             android:name=".health.HealthCheckBootReceiver"
