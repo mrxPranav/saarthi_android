@@ -29,5 +29,13 @@
             android:id="@+id/nav_notification_table"
             android:icon="@android:drawable/ic_menu_agenda"
             android:title="Notification Data Grid" />
+        <item
+            android:id="@+id/nav_hardware"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="@string/nav_hardware" />
+        <item
+            android:id="@+id/nav_bot"
+            android:icon="@android:drawable/ic_btn_speak_now"
+            android:title="@string/nav_bot" />
     </group>
 </menu>

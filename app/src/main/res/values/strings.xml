@@ -2,6 +2,32 @@
     <string name="app_name">Saarthi</string>
     <string name="health_check_count_format">Showing %1$d of %2$d checks</string>
     <string name="notification_permission_denied">Allow notifications to see health check alerts in the background.</string>
+    <string name="sync_tasks_label">Sync local tasks to cloud</string>
+    <string name="sync_tasks_started">Syncing local tasks to Postgres...</string>
+    <string name="sync_tasks_cancelled">Task sync cancelled</string>
+    <string name="app_list_title">Installed Apps</string>
+    <string name="app_list_count">%1$d apps</string>
+    <string name="refresh">Refresh</string>
+    <string name="usage_access_title">Usage access needed</string>
+    <string name="usage_access_message">Allow usage access for Saarthi to show which apps were recently in the foreground (green dot).</string>
+    <string name="open_settings">Open settings</string>
+    <string name="nav_app_list">Installed Apps</string>
+    <string name="hardware_title">Device Hardware</string>
+    <string name="hardware_count">%1$d items</string>
+    <string name="nav_hardware">Device Hardware</string>
+    <string name="bot_title">Bot</string>
+    <string name="nav_bot">Bot</string>
+    <string name="bot_hint">Start listening to record from the microphone. Recording continues in the background if you leave this screen or close the app. Stop from here or from the notification.</string>
+    <string name="bot_start_listening">Start listening</string>
+    <string name="bot_stop">Stop</string>
+    <string name="bot_status_idle">Idle</string>
+    <string name="bot_status_listening">Listening…</string>
+    <string name="bot_listening_started">Listening started. Recording continues in the background.</string>
+    <string name="bot_mic_permission_denied">Microphone permission is required to start listening.</string>
+    <string name="bot_file">Recording: %1$s</string>
+    <string name="bot_file_none">No recording yet.</string>
+    <string name="bot_channel_name">Bot listening</string>
+    <string name="bot_channel_desc">Shown while Bot is recording from the microphone</string>
     <string-array name="note_types">
         <item>Story</item>
         <item>Research</item>

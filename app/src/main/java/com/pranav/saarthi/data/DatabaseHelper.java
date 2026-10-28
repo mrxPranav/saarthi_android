@@ -266,6 +266,14 @@ public class DatabaseHelper extends SQLiteOpenHelper implements NotesRepository 
         db.close();
     }
 
+    public void updateTaskStatus(int taskId, String status) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TASK_STATUS, status);
+        db.update(TABLE_TASKS, values, COLUMN_ID + " = ?", new String[] { String.valueOf(taskId) });
+        db.close();
+    }
+
     @Override
     public void deleteTaskFromRepo(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
