@@ -74,6 +74,8 @@ public class LandingActivity extends AppCompatActivity {
                 startActivity(new Intent(LandingActivity.this, HardwareActivity.class));
             } else if (id == R.id.nav_bot) {
                 startActivity(new Intent(LandingActivity.this, BotActivity.class));
+            } else if (id == R.id.nav_app_list) {
+                startActivity(new Intent(LandingActivity.this, AppListActivity.class));
             }
             drawerLayout.closeDrawer(GravityCompat.END);
             return true;

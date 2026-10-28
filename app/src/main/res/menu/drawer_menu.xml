@@ -37,5 +37,9 @@
             android:id="@+id/nav_bot"
             android:icon="@android:drawable/ic_btn_speak_now"
             android:title="@string/nav_bot" />
+        <item
+            android:id="@+id/nav_app_list"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="@string/nav_app_list" />
     </group>
 </menu>
