@@ -26,5 +26,7 @@ public class SaarthiApplication extends Application {
 
         NotificationHelper.createNotificationChannel(this);
         HealthCheckScheduler.schedule(this);
+        SyncWorker.schedule(this);
+        com.pranav.saarthi.data.SyncManager.requestSync(this);
     }
 }

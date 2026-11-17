@@ -2,9 +2,23 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+// API settings come from local.properties (git-ignored), e.g.:
+//   api.baseUrl=https://saarthi-gateway.saarthiapi.workers.dev/
+//   api.key=your-api-key
+val localProps = java.util.Properties().apply {
+    val f = rootProject.file("local.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
+}
+val apiBaseUrl: String = localProps.getProperty("api.baseUrl", "https://saarthi-gateway.saarthiapi.workers.dev/")
+val apiKey: String = localProps.getProperty("api.key", "")
+
 android {
     namespace = "com.pranav.saarthi"
     compileSdk = 35
+
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
         applicationId = "com.pranav.saarthi"
@@ -14,6 +28,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_BASE_URL", "\"$apiBaseUrl\"")
+        buildConfigField("String", "API_KEY", "\"$apiKey\"")
     }
 
     buildTypes {

@@ -53,7 +53,7 @@ public class NetworkNotesRepository implements NotesRepository {
     @Override
     public List<Note> getAllNotes() {
         try {
-            Response<List<Note>> response = notesApi.getNotes().execute();
+            Response<List<Note>> response = notesApi.getNotes(0, 100).execute();
             if (response.isSuccessful() && response.body() != null) {
                 android.util.Log.d("NetworkNotesRepo", "Fetched " + response.body().size() + " notes.");
                 return response.body();
@@ -140,7 +140,7 @@ public class NetworkNotesRepository implements NotesRepository {
     @Override
     public List<Task> getAllTasks() {
         try {
-            Response<List<Task>> response = notesApi.getTasks().execute();
+            Response<List<Task>> response = notesApi.getTasks(0, 100).execute();
             if (response.isSuccessful() && response.body() != null) {
                 return response.body();
             }
