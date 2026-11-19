@@ -14,6 +14,16 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Backend URL. Override per build, e.g.:
+        // ./gradlew assembleDebug -PapiBaseUrl=https://<your-tunnel>.trycloudflare.com/
+        val apiBaseUrl = (project.findProperty("apiBaseUrl") as String?)
+            ?: "https://saarthi-api-20ml.onrender.com/"
+        buildConfigField("String", "API_BASE_URL", "\"$apiBaseUrl\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {

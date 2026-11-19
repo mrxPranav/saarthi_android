@@ -1,5 +1,7 @@
 package com.pranav.saarthi.api;
 
+import com.pranav.saarthi.BuildConfig;
+
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -7,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "https://saarthi-api-20ml.onrender.com/";
+    private static final String BASE_URL = BuildConfig.API_BASE_URL;
 
     public static Retrofit getClient() {
         if (retrofit == null) {

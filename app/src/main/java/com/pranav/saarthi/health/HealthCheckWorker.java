@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.pranav.saarthi.BuildConfig;
+
 import org.json.JSONObject;
 
 import java.io.OutputStream;
@@ -20,8 +22,8 @@ import java.time.format.DateTimeFormatter;
 public class HealthCheckWorker extends Worker {
 
     private static final String TAG = "HealthCheckWorker";
-    private static final String HEALTH_URL = "https://saarthi-api-20ml.onrender.com/health/";
-    private static final String REPORT_URL = "https://saarthi-api-20ml.onrender.com/health/checks";
+    private static final String HEALTH_URL = BuildConfig.API_BASE_URL + "health/";
+    private static final String REPORT_URL = BuildConfig.API_BASE_URL + "health/checks";
     private static final int TIMEOUT_MS = 180000; // 3 minutes
 
     /** ISO-8601 with the phone's timezone offset (e.g. +05:30 for IST). */
