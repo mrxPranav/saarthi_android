@@ -1,6 +1,7 @@
 package com.pranav.saarthi;
 
 
+import com.pranav.saarthi.data.SyncWorker;
 import com.pranav.saarthi.health.HealthCheckScheduler;
 import com.pranav.saarthi.health.NotificationHelper;
 import android.app.Application;
@@ -26,5 +27,7 @@ public class SaarthiApplication extends Application {
 
         NotificationHelper.createNotificationChannel(this);
         HealthCheckScheduler.schedule(this);
+        SyncWorker.schedule(this);
+        com.pranav.saarthi.data.SyncManager.requestSync(this);
     }
 }
