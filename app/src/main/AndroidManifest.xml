@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
@@ -103,6 +107,16 @@
             android:parentActivityName=".ui.SavedNotesActivity" />
 
         <activity
+            android:name=".ui.HardwareActivity"
+            android:label="@string/hardware_title"
+            android:parentActivityName=".ui.LandingActivity" />
+
+        <activity
+            android:name=".ui.BotActivity"
+            android:label="@string/bot_title"
+            android:parentActivityName=".ui.LandingActivity" />
+      
+        <activity
             android:name=".ui.AppListActivity"
             android:label="@string/app_list_title"
             android:parentActivityName=".ui.LandingActivity" />
@@ -124,6 +138,11 @@
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
+
+        <service
+            android:name=".bot.BotListeningService"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
 
     </application>
 

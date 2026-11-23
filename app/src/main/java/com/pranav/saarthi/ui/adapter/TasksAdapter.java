@@ -42,6 +42,15 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHold
         holder.taskName.setText(task.getName());
         holder.taskText.setText(task.getText());
         holder.taskDateTime.setText(task.getDateTime());
+        String status = task.getStatus() == null || task.getStatus().isEmpty()
+                ? "Pending"
+                : task.getStatus();
+        holder.taskStatus.setText("Status: " + status);
+        if ("synced".equalsIgnoreCase(status)) {
+            holder.taskStatus.setTextColor(0xFF2E7D32);
+        } else {
+            holder.taskStatus.setTextColor(holder.taskDateTime.getCurrentTextColor());
+        }
 
         holder.btnEditTask.setOnClickListener(v -> actionListener.onEdit(position));
         holder.btnDeleteTask.setOnClickListener(v -> actionListener.onDelete(position));
@@ -53,7 +62,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHold
     }
 
     public static class TaskViewHolder extends RecyclerView.ViewHolder {
-        TextView taskName, taskText, taskDateTime;
+        TextView taskName, taskText, taskDateTime, taskStatus;
         ImageButton btnEditTask, btnDeleteTask;
 
         public TaskViewHolder(@NonNull View itemView) {
@@ -61,6 +70,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHold
             taskName = itemView.findViewById(R.id.taskName);
             taskText = itemView.findViewById(R.id.taskText);
             taskDateTime = itemView.findViewById(R.id.taskDateTime);
+            taskStatus = itemView.findViewById(R.id.taskStatus);
             btnEditTask = itemView.findViewById(R.id.btnEditTask);
             btnDeleteTask = itemView.findViewById(R.id.btnDeleteTask);
         }
